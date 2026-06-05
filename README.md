@@ -29,19 +29,17 @@ Los datos provienen de una base de una salida de campo de psicología jurídica 
 El análisis de datos incluyó la depuración de la base (recodificación de variables, manejo de valores perdidos y detección de valores atípicos), seguido de análisis descriptivos, análisis factorial confirmatorio (AFC), teoría de respuesta al ítem (IRT) y modelos de ecuaciones estructurales mediante PLS-SEM. También se realizaron análisis multigrupo según sexo y grupo poblacional.
 
 ## Estructura del repositorio 
-- `data/` → bases de datos crudas y procesadas  
-- `scripts/` → scripts de R organizados por etapas del análisis  
-- `outputs/` → resultados (tablas, gráficos y modelos)
+- data/ → base de datos original
+- scripts/ → scripts de R organizados por etapas del análisis:
+  00_script_completo.R (ejecución total del análisis)
+  01_preparación y depuración.R  
+  02_descriptivos.R  
+  03_outliers.R  
+  04_AFC.R  
+  05_IRT.R  
+  06_PLS_SEM.R  
+- outputs/ → resultados (tablas, gráficos y modelos)
 
-### Reproducibilidad del análisis
-Para reproducir los resultados del estudio, se debe ejecutar el código en R en el siguiente orden:
-
-`source("scripts/01_limpieza.R")`
-`source("scripts/02_descriptivos.R")`
-`source("scripts/03_afc_irt.R")`
-`source("scripts/04_pls_sem.R")`
-
-El análisis fue desarrollado en RStudio y requiere la instalación previa de los paquetes utilizados en los scripts.
 
 ## Resultados principales
 
