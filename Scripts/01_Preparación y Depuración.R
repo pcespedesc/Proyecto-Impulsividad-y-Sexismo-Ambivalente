@@ -34,7 +34,7 @@ library(lavaan)
 #2 DEPURACIÓN DE LA BASE DE DATOS 
 
 #Carga de la base de datos desde SPSS
-data <- read_sav("data/raw/Sexismo.sav")
+data <- read_sav("Sexismo.sav")
 
 # Exploración de la estructura inicial y las variables de la base de datos 
 str(data)
