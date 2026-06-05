@@ -139,5 +139,3 @@ plot(boot_m1)
 #RESULTADO: la impulsividad predice de manera positiva y estadísticamente significativa el sexismo hostil. 
 #sin embargo, solo explica el 5.6% de las diferencias individuales en sexismo hostil, por lo que el tamaño del efecto es pequeño.
 #En el caso del sexismo benevolente la impulsividad no predice significativamente, así que no se demuestra una relación entre ambas variables.
-
-ar el 0.1% al 2.9%)
