@@ -33,11 +33,12 @@ El análisis de datos incluyó la depuración de la base (recodificación de var
 - scripts/ → scripts de R organizados por etapas del análisis:
   00_script_completo.R (ejecución total del análisis)
   01_preparación y depuración.R  
-  02_descriptivos.R  
-  03_outliers.R  
-  04_AFC.R  
-  05_IRT.R  
-  06_PLS_SEM.R  
+  02_datos perdidos.R  
+  03_descriptivos.R
+  04_Outliers.R 
+  05_AFC.R  
+  06_IRT.R  
+  07_PLS_SEM.R  
 - outputs/ → resultados (tablas, gráficos y modelos)
 
 
