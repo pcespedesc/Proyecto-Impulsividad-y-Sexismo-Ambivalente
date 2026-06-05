@@ -683,6 +683,18 @@ MGA_grupo <- estimate_pls_mga(
 summary(MGA_grupo)
 print(MGA_grupo)
 
+modelo_m1_recluso <- estimate_pls(
+  data              = datos_m1[datos_m1$GRUPO == "Recluso", ],
+  measurement_model = medida_m1,
+  structural_model  = estructura_m1)
+
+modelo_m1_estudiante <- estimate_pls(
+  data              = datos_m1[datos_m1$GRUPO == "Estudiante", ],
+  measurement_model = medida_m1,
+  structural_model  = estructura_m1)
+
+plot(modelo_m1_recluso)
+plot(modelo_m1_estudiante)
 # Resultado = no hay diferencias significativas entre grupos
 
 # MODELO 1 POR SEXO 
@@ -703,6 +715,18 @@ MGA_sexo <- estimate_pls_mga(
 summary(MGA_sexo)
 print(MGA_sexo)
 
+modelo_m1_mujer <- estimate_pls(
+  data              = datos_m1_sexo[datos_m1_sexo$SEXO == "Mujer", ],
+  measurement_model = medida_m1,
+  structural_model  = estructura_m1)
+
+modelo_m1_hombre <- estimate_pls(
+  data              = datos_m1_sexo[datos_m1_sexo$SEXO == "Hombre", ],
+  measurement_model = medida_m1,
+  structural_model  = estructura_m1)
+
+plot(modelo_m1_mujer)
+plot(modelo_m1_hombre)
 #Resultado = ninguna diferencia entre hombres y mujeres. Aunque no es estadisticamente significativo, se observa que en hombres la relación entre impulsividad y sexismo benevolente es negativa, lo que podría explorarse en muestras más grandes
 
 #MODELO 2 POR GRUPO 
@@ -715,6 +739,18 @@ MGA_grupo_m2 <- estimate_pls_mga(
 summary(MGA_grupo_m2)
 print(MGA_grupo_m2)
 
+modelo_m2_recluso <- estimate_pls(
+  data              = datos_m2[datos_m2$GRUPO == "Recluso", ],
+  measurement_model = medida_m2,
+  structural_model  = estructura_m2)
+
+modelo_m2_estudiante <- estimate_pls(
+  data              = datos_m2[datos_m2$GRUPO == "Estudiante", ],
+  measurement_model = medida_m2,
+  structural_model  = estructura_m2)
+
+plot(modelo_m2_recluso)
+plot(modelo_m2_estudiante)
 #Resultado = ninguna diferencia significativa entre reclusos y estudiantes
 
 # MODELO 2 POR SEXO
@@ -735,4 +771,16 @@ MGA_sexo_m2 <- estimate_pls_mga(
 summary(MGA_sexo_m2 )
 print(MGA_sexo_m2)
 
+modelo_m2_mujer <- estimate_pls(
+  data              = datos_m2_sexo[datos_m2_sexo$SEXO == "Mujer", ],
+  measurement_model = medida_m2,
+  structural_model  = estructura_m2)
+
+modelo_m2_hombre <- estimate_pls(
+  data              = datos_m2_sexo[datos_m2_sexo$SEXO == "Hombre", ],
+  measurement_model = medida_m2,
+  structural_model  = estructura_m2)
+
+plot(modelo_m2_mujer)
+plot(modelo_m2_hombre)
 # Resultado: ninguna diferencia significativa entre mujeres y hombres
