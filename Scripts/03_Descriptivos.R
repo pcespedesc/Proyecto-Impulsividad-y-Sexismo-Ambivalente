@@ -40,7 +40,7 @@ crosstable(datos_m2,
            funs = c(mean, sd)) %>%
   as_flextable(keep_id = FALSE)
 
-#Histogramasa exploratorios de distribución de cada variable
+#Histogramas exploratorios de distribución de cada variable
 par(mfrow = c(2,3))
 hist(datos_m1$EIP,     main = "EIP",      xlab = "")
 hist(datos_m1$SEXHOS,  main = "SEXHOS",   xlab = "")
