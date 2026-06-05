@@ -125,6 +125,8 @@ crosstable(datos_m1,
            showNA = "no",
            funs = c(mean, sd)) %>%
   as_flextable(keep_id = FALSE)
+#Los reclusos tienen más edad (media de 36 años) que los estudiantes (media de 22 años) y mayores puntajes en ambos tipos de sexismo que los estudiantes
+#La impulsividad es similar entre ambos grupos. 
 
 #Crosstable por sexo
 crosstable(datos_m1,
@@ -133,6 +135,8 @@ crosstable(datos_m1,
            showNA = "no",
            funs = c(mean, sd)) %>%
   as_flextable(keep_id = FALSE)
+#Hombres tienen puntajes ligeramente superiores en sexismo, aunque la diferencia es mínima
+#La impulsividad es practicamente igual. En cuanto a la edad los hombres en promedio son mayores (29 vs 23)
 
 #Descriptivos por grupo y sexo - Modelo 2 
 
@@ -143,6 +147,8 @@ crosstable(datos_m2,
            showNA = "no",
            funs = c(mean, sd)) %>%
   as_flextable(keep_id = FALSE)
+#Los reclusos puntúan consistentemente más alto en las tres subdimensiones del sexismo benevolente. 
+#La diferencia más grande es en la subdimensión de paternalismo protector. 
 
 #Crosstable por sexo
 crosstable(datos_m2,
@@ -151,6 +157,8 @@ crosstable(datos_m2,
            showNA = "no",
            funs = c(mean, sd)) %>%
   as_flextable(keep_id = FALSE)
+#Las mujeres puntúan más bajo que los hombres en las subdimensiones de paternalismo e intimidad, pero ligeramente más alto
+#en diferenciación de género. Aunque las diferencias son pequeñas. 
 
 #Histogramas exploratorios de distribución de cada variable
 par(mfrow = c(2,3))
