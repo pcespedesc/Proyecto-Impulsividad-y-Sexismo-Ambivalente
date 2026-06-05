@@ -29,7 +29,7 @@ Los datos provienen de una base de una salida de campo de psicología jurídica 
 El análisis de datos incluyó la depuración de la base (recodificación de variables, manejo de valores perdidos y detección de valores atípicos), seguido de análisis descriptivos, análisis factorial confirmatorio (AFC), teoría de respuesta al ítem (IRT) y modelos de ecuaciones estructurales mediante PLS-SEM. También se realizaron análisis multigrupo según sexo y grupo poblacional.
 
 ## Estructura del repositorio 
-- data/ → base de datos original
+- sexismo.sav → base de datos original
 - scripts/ → scripts de R organizados por etapas del análisis:
   00_script_completo.R (ejecución total del análisis)
   01_preparación y depuración.R  
