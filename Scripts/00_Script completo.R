@@ -162,21 +162,21 @@ crosstable(datos_m2,
 
 #Histogramas exploratorios de distribución de cada variable
 par(mfrow = c(2,3))
-hist(datos_m1$EIP,     main = "EIP",      xlab = "")
-hist(datos_m1$SEXHOS,  main = "SEXHOS",   xlab = "")
-hist(datos_m1$SEXBENE, main = "SEXBENE",  xlab = "")
-hist(datos_m2$PATERPRO,main = "PATERPRO", xlab = "")
-hist(datos_m2$DIGENERO,main = "DIGENERO", xlab = "")
-hist(datos_m2$INTIMIDAD,main = "INTIMIDAD",xlab = "")
+hist(datos_m1$EIP,     main = "EIP",      xlab = "") #La mayoría de valores se concentran entre 0.5 y 1.5, con pocos casos en los extremos. 
+hist(datos_m1$SEXHOS,  main = "SEXHOS",   xlab = "") #Los valores se concentran entre 10 y 25, con una concentración en los valores medios. 
+hist(datos_m1$SEXBENE, main = "SEXBENE",  xlab = "") #Es la que más se aproxima a una distribución normal, con una mayor frecuencia entre 16 y 24
+hist(datos_m2$PATERPRO,main = "PATERPRO", xlab = "") #Mayor concentración entre 5 y 9 
+hist(datos_m2$DIGENERO,main = "DIGENERO", xlab = "") #Concentración principal entre 4 y 7
+hist(datos_m2$INTIMIDAD,main = "INTIMIDAD",xlab = "") #Distribución cercana a la normalidad  con una mayor concentración entre 5 y 7
 par(mfrow = c(1,1))
 
 #Boxplots para explorar diferencias entre grupos y sexo 
-boxplot(EIP ~ SEXO * GRUPO,      data = datos_m1, main = "EIP por sexo y grupo")
-boxplot(SEXHOS ~ SEXO * GRUPO,   data = datos_m1, main = "Sexismo Hostil")
-boxplot(SEXBENE ~ SEXO * GRUPO,  data = datos_m1, main = "Sexismo Benevolente")
-boxplot(PATERPRO ~ SEXO * GRUPO, data = datos_m2, main = "Paternalismo Protector")
-boxplot(DIGENERO ~ SEXO * GRUPO, data = datos_m2, main = "Diferenciación de Género")
-boxplot(INTIMIDAD ~ SEXO * GRUPO,data = datos_m2, main = "Intimidad Heterosexual")
+boxplot(EIP ~ SEXO * GRUPO,      data = datos_m1, main = "EIP por sexo y grupo") #Medianas muy similares entre estudiantes y mujer reclusa, pero hombre recluso presenta la mediana más baja, aunque esta diferencia puede no ser muy grande
+boxplot(SEXHOS ~ SEXO * GRUPO,   data = datos_m1, main = "Sexismo Hostil") #Los reclusos parecen presentar mayores niveles de sexismo hostil que los estudiantes. La mediana más alta es mujer reclusa mientras que la mediana más baja es mujer estudiante
+boxplot(SEXBENE ~ SEXO * GRUPO,  data = datos_m1, main = "Sexismo Benevolente") #Las mujeres reclusas presentan la mediana más alta y los dos grupos de estudiantes muestran medianas menores. 
+boxplot(PATERPRO ~ SEXO * GRUPO, data = datos_m2, main = "Paternalismo Protector") #Las mujeres reclusas tienen la mediana más alta, seguido de los hombres reclusos 
+boxplot(DIGENERO ~ SEXO * GRUPO, data = datos_m2, main = "Diferenciación de Género") #Se destacan los outliers. Los reclusos tienen mayor diferenciación de género que los estudiantes. Entre estudiantes, los hombres muestran niveles más bajos
+boxplot(INTIMIDAD ~ SEXO * GRUPO,data = datos_m2, main = "Intimidad Heterosexual") #Las medianas son muy parecidas en los grupos
 
 #5.ANÁLISIS DE VALORES ATÍPICOS (OUTLIERS)
 
@@ -215,7 +215,6 @@ vars_m1 <- data.frame(
 str(vars_m1)
 
 MUL_OUT_m1 <- outliers_mcd(vars_m1, h = .75)
-plot_outliers_mcd(MUL_OUT_m1, vars_m1)
 
 # Ver qué filas son
 MUL_OUT_m1$outliers_pos
@@ -273,8 +272,6 @@ vars_m2 <- data.frame(
 )
 
 MUL_OUT_m2 <- outliers_mcd(vars_m2, h = .75)
-plot_outliers_mcd(MUL_OUT_m2, vars_m2)
-
 # Ver qué filas son
 MUL_OUT_m2$outliers_pos
 
