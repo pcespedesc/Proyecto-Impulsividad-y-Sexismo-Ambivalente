@@ -763,7 +763,7 @@ plot(modelo_m1_mujer)
 plot(modelo_m1_hombre)
 #Resultado = ninguna diferencia significativa entre hombres y mujeres. Ambos sexos muestran una relación positiva similar entre impulsividad y sexismo hostil. 
 #En cuanto al sexismo benevolente, en mujeres la relación es levemente positiva, mientras que en hombres es negativa. Lo que sugiere que a mayor impulsividad, los hombres tienden a puntuar más bajo en sexismo benevolente.
-#Aunque la diferencia no alcanza significación estadística (p valor de 0.65), la dirección opuesta es teóricamente relevante y podría explorarse en muestras más grandes. 
+#Aunque la diferencia no alcanza significación estadística (p valor de 0.065), la dirección opuesta es teóricamente relevante y podría explorarse en muestras más grandes. 
 
 #MODELO 2 POR GRUPO 
 MGA_grupo_m2 <- estimate_pls_mga(
