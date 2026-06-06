@@ -548,9 +548,10 @@ summary(pred_m1)
 plot(modelo_m1)
 plot(boot_m1)
 
-#RESULTADO: la impulsividad predice de manera positiva y estadísticamente significativa el sexismo hostil. 
-#sin embargo, solo explica el 5.6% de las diferencias individuales en sexismo hostil, por lo que el tamaño del efecto es pequeño.
-#En el caso del sexismo benevolente la impulsividad no predice significativamente, así que no se demuestra una relación entre ambas variables.
+#RESULTADO: la impulsividad predice de manera positiva y estadísticamente significativa el sexismo hostil. Es decir, que a mayor impulsividad, mayor sexismo hostil.  
+#sin embargo, el R² de 0.056% indica un tamaño de efecto pequeño en donde la impulsividad solo explica el 5.6% de la varianza del sexismo hostil.
+
+#En el caso del sexismo benevolente no hay relación significativa y el R² es de 0.001. Lo que indica que la impulsividad no predice el sexismo benevolente en la muestra.
 
 #9. PLS-SEM: MODELO 1 CON EDAD COMO COVARIABLE
 
@@ -603,10 +604,11 @@ summary(pred_m1_cov)
 plot(modelo_m1_cov)
 plot(boot_m1_cov)
 
-#Resultado: la edad no mostró un efecto significativo sobre el sexismo hostil, pero sí predijo positivamente
-#el sexismo benevolente (pasó de explicar el 0.1% al 2.9%)
+#RESULTADOS: la edad no mostró un efecto significativo sobre el sexismo hostil, pero sí predijo de manera significativa y positiva
+#que a mayor edad, hay mayor sexismo benevolente. Lo que sugiere que esta dimensión se asocia más con factores sociodemográficos que con rasgos de personalidad como la impulsividad. 
 
 #10. PLS-SEM: MODELO 2 (SUBDIMENSIONES SEXISMO BENEVOLENTE)
+#Se evalúa si la impulsividad predice cada subdimensión del sexismo benevolente por separado
 
 medida_m2 <- constructs(
   composite("Impulsividad", single_item("EIP")),
@@ -647,12 +649,13 @@ summary(pred_m2)
 plot(modelo_m2)
 plot(boot_m2)
 
-#La impuslividad no predijo significativamente ninguna de las subdimensiones del sexismo benevolente
+#RESULTADOS: la impulsividad no predice significativamente ninguna de las tres subdimensiones del sexismo benevolente. Este resultado es consistentecon el modelo 1 y refuerza la idea de que la impulsividad no se relaciona
+# con las manifestaciones benevolentes del sexismo, independientemente de cómo se operacionalicen (puntaje total o subdimensiones).
 
 #11. PLS-SEM: MODELO 2 CON EDAD COMO COVARIABLE
-
+#Se incluye la edad para controlar su efecto y evaluar si la impulsividad predice las subdimensiones más allá de lo que ya explica la edad.
 datos_m2_edad <- datos_m2[complete.cases(datos_m2$EDAD), ]
-nrow(datos_m2_edad)
+nrow(datos_m2_edad) 
 
 medida_m2_cov <- constructs(
   composite("Impulsividad", single_item("EIP")),
@@ -694,7 +697,7 @@ summary(pred_m2_cov)
 plot(modelo_m2_cov)
 plot(boot_m2_cov)
 
-#RESULTADO: En cuanto al efecto de la edad, la única relación positiva significativa es edad y paternalismo protector, en donde 
+#RESULTADOS: En cuanto al efecto de la edad, la única relación positiva significativa es edad y paternalismo protector, en donde 
 #a mayor edad tienden a observarse puntuaciones más altas en paternalismo protector. Estos resultados sugieren que las manifestaciones benevolentes del sexismo se relacionan más con factores asociados a la edad que con la impulsividad.
 
 #12. ANÁLISIS MULTIGRUPO
@@ -723,7 +726,10 @@ modelo_m1_estudiante <- estimate_pls(
 
 plot(modelo_m1_recluso)
 plot(modelo_m1_estudiante)
-# Resultado = no hay diferencias significativas entre grupos
+# Resultado = no hay diferencias significativas entre grupos. Aunque ambos grupos muestran una relación positiva entre impulsividad y sexismo hostil, siendo más 
+#pronunciada en reclusos. 
+
+#En el caso del benevolente independientemente de si la persona es reclusa o estudiante la impulsividad no predice el sexismo benevolente
 
 # MODELO 1 POR SEXO 
 
@@ -755,7 +761,9 @@ modelo_m1_hombre <- estimate_pls(
 
 plot(modelo_m1_mujer)
 plot(modelo_m1_hombre)
-#Resultado = ninguna diferencia entre hombres y mujeres. Aunque no es estadisticamente significativo, se observa que en hombres la relación entre impulsividad y sexismo benevolente es negativa, lo que podría explorarse en muestras más grandes
+#Resultado = ninguna diferencia significativa entre hombres y mujeres. Ambos sexos muestran una relación positiva similar entre impulsividad y sexismo hostil. 
+#En cuanto al sexismo benevolente, en mujeres la relación es levemente positiva, mientras que en hombres es negativa. Lo que sugiere que a mayor impulsividad, los hombres tienden a puntuar más bajo en sexismo benevolente.
+#Aunque la diferencia no alcanza significación estadística (p valor de 0.65), la dirección opuesta es teóricamente relevante y podría explorarse en muestras más grandes. 
 
 #MODELO 2 POR GRUPO 
 MGA_grupo_m2 <- estimate_pls_mga(
@@ -779,7 +787,7 @@ modelo_m2_estudiante <- estimate_pls(
 
 plot(modelo_m2_recluso)
 plot(modelo_m2_estudiante)
-#Resultado = ninguna diferencia significativa entre reclusos y estudiantes
+#RESULTADOS = ninguna diferencia significativa entre reclusos y estudiantes en las tres subdimensiones. Coeficientes cercanos a 0 o R² nulos.
 
 # MODELO 2 POR SEXO
 datos_m2_sexo <- datos_m2[!is.na(datos_m2$SEXO), ]
@@ -811,4 +819,7 @@ modelo_m2_hombre <- estimate_pls(
 
 plot(modelo_m2_mujer)
 plot(modelo_m2_hombre)
-# Resultado: ninguna diferencia significativa entre mujeres y hombres
+# RESULTADOS: ninguna diferencia significativa entre mujeres y hombres.
+#Aún así, hay un patron en las tres subdimensiones del sexismo benevolente: los hombres muestran coeficientes negativos mientras que en 
+#las mujeres son positivos o cercanos a 0. Esto replica la tendencia observada en el modelo 1 por sexo (impulsividad → SexBenev) y sugiere que la relación entre impulsividad y sexismo benevolente podría tener una dirección
+#diferente según el sexo, lo cual merece exploración en muestras más grandes con mayor potencia estadística.
