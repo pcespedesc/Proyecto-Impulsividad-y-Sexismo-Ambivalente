@@ -35,7 +35,6 @@ vars_m1 <- data.frame(
 str(vars_m1)
 
 MUL_OUT_m1 <- outliers_mcd(vars_m1, h = .75)
-plot_outliers_mcd(MUL_OUT_m1, vars_m1)
 
 # Ver qué filas son
 MUL_OUT_m1$outliers_pos
@@ -93,8 +92,6 @@ vars_m2 <- data.frame(
 )
 
 MUL_OUT_m2 <- outliers_mcd(vars_m2, h = .75)
-plot_outliers_mcd(MUL_OUT_m2, vars_m2)
-
 # Ver qué filas son
 MUL_OUT_m2$outliers_pos
 
