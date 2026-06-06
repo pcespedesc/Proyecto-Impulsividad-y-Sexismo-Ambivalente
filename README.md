@@ -24,7 +24,7 @@ A diferencia del sexismo hostil, el benevolente se organiza en tres subdimension
 El estudio corresponde a un diseño no experimental, transversal y de alcance predictivo, basado en datos secundarios recolectados en contextos naturales.
 
 La muestra está conformada por 322 participantes, de los cuales 232 son estudiantes universitarios y 90 personas privadas de la libertad. El muestreo fue no probabilístico por conveniencia.
-Los datos provienen de una base de una salida de campo de psicología jurídica de la Universidad Nacional de Colombia (2012–2016), recolectados mediante cuestionarios de autoinforme en contextos universitarios y penitenciarios.
+Los datos provienen de una base de una salida de campo de psicología jurídica de la Universidad Nacional de Colombia (2012–2016), recolectados mediante cuestionarios de autoinforme en contextos universitarios y penitenciarios. 
 
 El análisis de datos incluyó la depuración de la base (recodificación de variables, manejo de valores perdidos y detección de valores atípicos), seguido de análisis descriptivos, análisis factorial confirmatorio (AFC), teoría de respuesta al ítem (IRT) y modelos de ecuaciones estructurales mediante PLS-SEM. También se realizaron análisis multigrupo según sexo y grupo poblacional.
 
@@ -39,14 +39,14 @@ El análisis de datos incluyó la depuración de la base (recodificación de var
   05_AFC.R  
   06_IRT.R  
   07_PLS_SEM.R  
-- outputs/ → resultados (tablas, gráficos y modelos)
+- outputs/ → resultados (tablas y gráficos)
 
 
 ## Resultados principales
 
-Los resultados muestran que la impulsividad predice significativamente el sexismo hostil en la muestra total. En contraste, no se observa una relación consistente entre impulsividad y sexismo benevolente ni con sus subdimensiones.
-
-En el análisis con covariables, la edad presenta una asociación positiva con algunas dimensiones del sexismo benevolente, especialmente con el paternalismo protector. Finalmente, los análisis multigrupo no evidencian diferencias significativas en las relaciones estructurales según sexo o grupo poblacional.
+La impulsividad predice positiva y significativamente el sexismo hostil en la muestra total (β = 0.236, p < .001), aunque con un tamaño de efecto pequeño (R² = 5.6%). No se encontró relación significativa entre impulsividad y sexismo benevolente, ni con sus subdimensiones de paternalismo protector, diferenciación de género e intimidad heterosexual, resultado consistente en todos los modelos estimados.
+Al controlar por edad, la impulsividad mantuvo su efecto sobre el sexismo hostil, mientras que la edad predijo significativamente el sexismo benevolente total (β = 0.162, p = .024) y el paternalismo protector (β = 0.266, p < .001), sugiriendo que las manifestaciones benevolentes del sexismo se asocian más con factores sociodemográficos que con rasgos de personalidad.
+Los análisis multigrupo no evidenciaron diferencias estadísticamente significativas en las relaciones estructurales según grupo poblacional (reclusos vs. estudiantes) ni según sexo, aunque se observó una tendencia no significativa hacia una relación negativa entre impulsividad y sexismo benevolente en hombres que merece exploración en muestras más grandes.
 
 ## Requisitos del entorno
 El análisis fue desarrollado en RStudio. Para la ejecución del proyecto se requiere instalar los siguientes paquetes:
