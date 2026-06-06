@@ -35,6 +35,8 @@ fitMeasures(fit_afc_eip, c("cfi", "tli", "rmsea", "wrmr"))
 semPaths(fit_afc_eip, what = "std", layout = "tree",
         title = FALSE, style = "ram",
         main = "AFC - Impulsividad (EIP)")
+#La mayoría de los ítems tienen cargas factoriales significativas y en la dirección esperada, con excepción de el ítem 4, 6 y 11 que mostraron cargas bajas o no significativas.
+#Sin embargo, dado que se trabajó con el puntaje total no se eliminan ítems. 
 
 # 6.2 AFC SEXISMO 2 FACTORES  
 
@@ -58,8 +60,11 @@ fitMeasures(fit_afc_esa_2f, c("cfi", "tli", "rmsea", "wrmr"))
 semPaths(fit_afc_esa_2f, what = "std", layout = "tree",
          title = FALSE, style = "ram",
          main = "AFC - ESA (2 factores: Hostil y Benevolente)")
-
-#6.3 AFC SEXISMO 3 SUBDIMENSIONES CORRELACIONADAS
+#El 0.46 entre los dos factores indica que ambos factores están moderadamente correlacionados. Lo cual es coherente con la teoría de Glick y Fiske (1996)
+#Todos los ítems del factor hostil son positivos y significativos
+#Sin embargo, ESA 13 tiene una carga negativa de 0.44, lo que muestra que este ítem funciona en dirección opuesta al resto de ítems y ESA06 mostró una carga baja de 0.21.Dado que se trabajó
+# con el puntaje total provisto en la base de datos, no se procedió a eliminar ítems; estos hallazgos se reportan como una limitación del instrumento en esta muestra específica.
+       
 modelo_afc_benev_3f <- 'Paternalismo =~ ESA03 + ESA09 + ESA17 + ESA20
   DifGenero    =~ ESA08 + ESA19 + ESA22
   Intimidad    =~ ESA01 + ESA06 + ESA12 + ESA13
@@ -87,8 +92,10 @@ semPaths(fit_afc_benev_3f,
          residuals = FALSE,
          title = TRUE,
          main = "AFC - Sexismo Benevolente (3 factores correlacionados)")
+#El AFC confirmó la estructura de tres factores correlacionados del sexismo benevolente propuesta por Vaamonde y Omar (2012), con índices de ajuste satisfactorios (CFI = .978, TLI = .970, RMSEA = .056, WRMR = .906). 
+#Las tres subdimensiones mostraron correlaciones altas entre sí (r = .62 a .87), lo que respalda su pertenencia a un constructo común. Las cargas factoriales fueron en general adecuadas, con excepción de ESA13 y ESA06, que presentaron el mismo comportamiento atípico identificado en el modelo bifactorial, y se reportan como limitación del instrumento en esta muestra.
 
-#6.4 AFC SUBDIMENSIONES COMO INDICADORES DEL SEXISMO AMBIVALENTE 
+       #6.4 AFC SUBDIMENSIONES COMO INDICADORES DEL SEXISMO AMBIVALENTE 
 modelo_afc_benev_2orden <- 'Paternalismo =~ ESA03 + ESA09 + ESA17 + ESA20
   DifGenero    =~ ESA08 + ESA19 + ESA22
   Intimidad    =~ ESA01 + ESA06 + ESA12 + ESA13
@@ -100,5 +107,6 @@ fit_afc_benev_2orden <- cfa(
   ordered   = TRUE)
 
 #Aquí sale el aviso de que hay varianzas negativas en los factores latentes, lo cual indica problemas con el modelo, así que se opta
-#por conservar la estructura de tres factores correlacionados
+#por conservar la estructura de tres factores correlacionados. Esto se puede explicar por las correlaciones tan altas entre sí de las subdimensiones, lo cual evidencia que comparten una gran cantidad de varianza
+#y dificultan la identificación de un factor general independiente. 
 
